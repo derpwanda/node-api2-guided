@@ -17,6 +17,8 @@ function find(query = {}) {
   const { page = 1, limit = 100, sortby = "id", sortdir = "asc" } = query
   const offset = limit * (page - 1)
 
+  //this information can be change by configuring the query string in the API call. See server.get(api/hubs) in index.js
+
   return db("hubs")
     .orderBy(sortby, sortdir)
     .limit(limit)
