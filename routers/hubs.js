@@ -1,7 +1,9 @@
 const express = require("express")
 const hubs = require("../hubs/hubs-model.js")
-
+const messageRouter = require("./message")
 const router = express.Router()
+
+router.use("/:id/messages", messageRouter)
 
 router.get("/", (req, res) => {
     const options = {
